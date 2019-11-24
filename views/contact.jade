@@ -1,0 +1,7 @@
+extends layout.jade
+
+block content
+    h3 Mohon isi dengan email anda
+    form(action='/contact2', method='post')
+        input(type='text', name='email', placeholder='email')
+        input(type='submit', value='Submit')

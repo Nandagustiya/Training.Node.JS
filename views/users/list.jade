@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+  include ../layouts/head.jade 
+  +head('Express.JS')
+  body
+    header
+      include ../layouts/nav.jade
+      +nav()
+      br
+      .container
+        .row.aligns-items-center
+          .col-md-6.order-md-1.text-center.text-md-left.pr-md-5
+            h1 User List
+            a(href="/users/create").btn.btn-primary Tambah User
+            br
+            br
+            table.table
+              thead
+                th(scope="col") No
+                th(scope="col") Email
+                th(scope="col") Password
+                th(scope="col") Action
+                th
+              tbody
+                for user, index in users
+                  tr
+                    td #{index+1}
+                    td #{user.email}
+                    td #{user.password}
+                    td
+                      a(href="/users/edit/#{user._id}").btn.btn-primary Edit
+                    td
+                      form(method="POST", action="/users/delete/#{user._id}")
+                                                    input(type="hidden", name="_method", value="DELETE")
+                                                    button(type="submit").btn.btn-danger| Delete
+  include ../layouts/footer.jade
+  +footer()

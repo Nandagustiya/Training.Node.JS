@@ -1,0 +1,14 @@
+mixin nav()
+    nav.navbar.navbar-expand.navbar-dark.bg-dark
+        a(href="/", aria-label="Express JS").navbar-brand.mr-0
+        .mr-md-2
+            img(src="/images/nodejs-icon.svg", width="36", height="36")
+        .collapse.navbar-collapse
+            ul.navbar-nav.mr-auto
+                li.nav-item
+                    a.nav-link(href="/") Home
+                li.nav-item
+                    a.nav-link(href="/users/list") Users
+                li.nav-item
+                    a.nav-link(href="/logout") Logout
+                
